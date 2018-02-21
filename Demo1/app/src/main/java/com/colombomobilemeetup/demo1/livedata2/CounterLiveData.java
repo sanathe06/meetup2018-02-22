@@ -6,15 +6,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class CounterLiveData extends MutableLiveData<Integer>{
-
     private Timer timer;
-
     private int count = 0;
-
-    public static CounterLiveData get() {
-        return new CounterLiveData();
-    }
-
     @Override
     protected void onActive() {
         super.onActive();
@@ -34,10 +27,13 @@ public class CounterLiveData extends MutableLiveData<Integer>{
             public void run() {
                 count++;
                 postValue(count);
-
             }
         };
         timer.scheduleAtFixedRate(timerTask, 1000, 1000);
+    }
+
+    public static CounterLiveData get() {
+        return new CounterLiveData();
     }
 
     private void stopCounting() {

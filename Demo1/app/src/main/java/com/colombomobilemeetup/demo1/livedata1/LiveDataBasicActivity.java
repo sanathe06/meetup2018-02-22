@@ -34,18 +34,6 @@ public class LiveDataBasicActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        startCounting();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        stopCounting();
-    }
-
     private void startCounting() {
         timer = new Timer();
         TimerTask timerTask = new TimerTask() {
@@ -58,6 +46,19 @@ public class LiveDataBasicActivity extends AppCompatActivity {
         };
         timer.scheduleAtFixedRate(timerTask, 1000, 1000);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startCounting();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopCounting();
+    }
+
 
     private void stopCounting() {
         if (timer != null) {

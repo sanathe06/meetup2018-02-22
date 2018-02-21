@@ -34,14 +34,14 @@ public class DemoLiveDataTransformActivity extends AppCompatActivity {
 
         textViewModel = ViewModelProviders.of(this).get(TextViewModel.class);
 
-        textViewModel.capsWithSwitchMap.observe(this, new Observer<String>() {
+        textViewModel.capital.observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textViewOutput.setText(s);
             }
         });
 
-        textViewModel.capsWithMap.observe(this, new Observer<Integer>() {
+        textViewModel.length.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
                 textViewOutput2.setText("Length :" + integer);

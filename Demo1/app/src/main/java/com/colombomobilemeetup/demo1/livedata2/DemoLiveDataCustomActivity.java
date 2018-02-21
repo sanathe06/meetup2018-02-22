@@ -18,11 +18,7 @@ public class DemoLiveDataCustomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         textViewCount3 = findViewById(R.id.textViewCount3);
-        CounterLiveData.get().observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(@Nullable Integer integer) {
-                textViewCount3.setText(integer.toString());
-            }
-        });
+        CounterLiveData.get()
+                .observe(this, integer -> textViewCount3.setText(integer.toString()));
     }
 }
