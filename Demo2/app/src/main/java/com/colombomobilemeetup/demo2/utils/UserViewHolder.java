@@ -1,8 +1,11 @@
-package com.colombomobilemeetup.demo2;
+package com.colombomobilemeetup.demo2.utils;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.colombomobilemeetup.demo2.R;
+import com.colombomobilemeetup.demo2.database.User;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
     public TextView fistName;

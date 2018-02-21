@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.colombomobilemeetup.demo2.R;
 
-public class Main2Activity extends AppCompatActivity {
+public class SharedViewModelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

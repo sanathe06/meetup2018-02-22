@@ -30,12 +30,7 @@ public class DetailsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sharedViewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
-        sharedViewModel.item.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                output.setText(s);
-            }
-        });
+        sharedViewModel.item.observe(this, s -> output.setText(s));
     }
 
     @Override
