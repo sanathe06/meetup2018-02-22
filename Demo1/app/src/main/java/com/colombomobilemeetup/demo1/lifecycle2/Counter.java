@@ -6,28 +6,29 @@ import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.util.Log;
 
+import com.colombomobilemeetup.demo1.CountChangeListener;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class MyLifecycleObserver2 implements LifecycleObserver {
+public class Counter implements LifecycleObserver {
     public static final String TAG = "Observer";
     private final CountChangeListener countChangeListener;
     private final LifecycleOwner lifecycleOwner;
 
-    private int count;
+    private int count = 0;
     private Timer timer;
 
 
-    public static void bind(LifecycleOwner lifecycleOwner, CountChangeListener countChangeListener, int initialCount) {
-        new MyLifecycleObserver2(lifecycleOwner, countChangeListener, initialCount);
+    public static void bind(LifecycleOwner lifecycleOwner, CountChangeListener countChangeListener) {
+        new Counter(lifecycleOwner, countChangeListener);
     }
 
-    private MyLifecycleObserver2(LifecycleOwner lifecycleOwner, final CountChangeListener countChangeListener, int initialCount) {
+    private Counter(LifecycleOwner lifecycleOwner, final CountChangeListener countChangeListener) {
         this.countChangeListener = countChangeListener;
         this.lifecycleOwner = lifecycleOwner;
         this.lifecycleOwner.getLifecycle().addObserver(this);
-        this.count = initialCount;
 
     }
 

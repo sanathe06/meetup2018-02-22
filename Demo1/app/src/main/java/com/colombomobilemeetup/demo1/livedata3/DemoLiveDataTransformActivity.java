@@ -1,4 +1,4 @@
-package com.colombomobilemeetup.demo1.livedata2;
+package com.colombomobilemeetup.demo1.livedata3;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.colombomobilemeetup.demo1.R;
 
-public class Demo4Activity extends AppCompatActivity {
+public class DemoLiveDataTransformActivity extends AppCompatActivity {
 
     private TextViewModel textViewModel;
 
