@@ -23,12 +23,4 @@ public class UsersViewModel extends AndroidViewModel {
         return userRepository.getUsers();
     }
 
-
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-        if (userRepository != null) {
-            userRepository.clear();
-        }
-    }
 }

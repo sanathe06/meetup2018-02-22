@@ -17,8 +17,9 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         lastName = itemView.findViewById(R.id.textViewLasttName);
     }
 
-    public void bind(User user) {
+    public void bind(final User user,final OnItemClickListener onItemClickListener) {
         fistName.setText(user.firstName);
         lastName.setText(user.lastName);
+        itemView.setOnClickListener(v -> onItemClickListener.onClick(user));
     }
 }

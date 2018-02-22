@@ -26,4 +26,11 @@ public interface UserDao {
 
     @Delete
     void delete(User... users);
+
+    @Query("select firstName from user")
+    LiveData<List<NameTuple>> firstNames();
+
+    public class NameTuple{
+        public String firstName;
+    }
 }

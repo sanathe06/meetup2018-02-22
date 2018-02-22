@@ -15,6 +15,7 @@ public class User {
         this.lastName = lastName;
     }
 
+    //region commented
     public int getId() {
         return id;
     }
@@ -38,4 +39,5 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    //endregion
 }

@@ -41,12 +41,4 @@ public class UserViewModel extends AndroidViewModel {
     public void setUser(User user) {
         this.user = user;
     }
-
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-        if (userRepository != null) {
-            userRepository.clear();
-        }
-    }
 }
